@@ -116,9 +116,10 @@ namespace Candea.Common
         /// This function is defined to as to remove ambiguity when needed between the C# intrinsic (!)
         /// operator and the optional value (!) operator that yields an encapsulated value from
         /// within an optional value.
+        /// Alias for <see cref="not(bool)"/>.
         /// </remarks>
         [DebuggerStepThrough]
-        public static bool Not(bool value) => !value;
+        public static bool Not(bool value) => not(value);
 
         /// <summary>
         /// Creates a compiled regular expression from the supplied pattern.
@@ -126,10 +127,10 @@ namespace Candea.Common
         /// <param name="pattern">The pattern to be interpreted as a regular expression.</param>
         /// <returns>A compiled <see cref="System.Text.RegularExpressions.Regex"/>.</returns>
         /// <remarks>
-        /// Based on <see cref="Util.corefunc.regex(string)"/>.
+        /// Based on <see cref="regex(string)"/>.
         /// </remarks>
         [DebuggerStepThrough]
-        public static Regex Regex(this string pattern) => new Regex(pattern, RegexOptions.Compiled);
+        public static Regex ToRegex(this string pattern) => new Regex(pattern, RegexOptions.Compiled);
 
         /// <summary>
         /// 
@@ -139,6 +140,67 @@ namespace Candea.Common
         /// <param name="data"></param>
         /// <param name="f"></param>
         /// <returns></returns>
-        public static IEnumerable<S> Map<T, S>(this IEnumerable<T> data, Func<T, S> f) => data.Select(f);
+        public static IEnumerable<S> Map<T, S>(this IEnumerable<T> data, Func<T, S> f) => map(data, f);
+
+        /// <summary>
+        /// Yields a <see cref="IReadOnlyList{T}"/> realization instance from an input sequence.
+        /// </summary>
+        /// <typeparam name="T">The input item type.</typeparam>
+        /// <param name="items">The input items.</param>
+        /// <returns>A <see cref="IReadOnlyList{T}"/> realization instance from the input sequence.</returns>
+        /// <remarks>
+        /// Alias for <see cref="list{T}(IEnumerable{T})"/>.
+        /// </remarks>
+        [DebuggerStepThrough]
+        public static IReadOnlyList<T> ToReadOnlyList<T>(this IEnumerable<T> items) => list(items);
+
+        /// <summary>
+        /// Yields a <see cref="IReadOnlyList{T}"/> realization instance from provided input sequences.
+        /// </summary>
+        /// <typeparam name="T">The input item type.</typeparam>
+        /// <param name="items">The input items.</param>
+        /// <param name="more">Additional input items.</param>
+        /// <returns>A <see cref="IReadOnlyList{T}"/> realization instance from the provided input sequences.</returns>
+        /// <remarks>
+        /// Alias for <see cref="list{T}(IEnumerable{T}, T[])"/>.
+        /// </remarks>
+        [DebuggerStepThrough]
+        public static IReadOnlyList<T> ToReadOnlyList<T>(this IEnumerable<T> items, params T[] more) => list(items, more);
+
+        /// <summary>
+        /// Yields a <see cref="IReadOnlyList{T}"/> instance from an input sequence.
+        /// </summary>
+        /// <typeparam name="T">The input item type.</typeparam>
+        /// <param name="parms">The input items.</param>
+        /// <returns>A <see cref="IReadOnlyList{T}"/> realization instance from the provided input sequences.</returns>
+        /// <remarks>
+        /// Alias for <see cref="list{T}(T[])"/>.
+        /// </remarks>
+        public static IReadOnlyList<T> ToReadOnlyList<T>(params T[] parms) => list(parms);
+
+        /// <summary>
+        /// Creates a <see cref="Tuple{T1, T2}"/> instance.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first item.</typeparam>
+        /// <typeparam name="T2">The type of the second item.</typeparam>
+        /// <param name="x1">The first item.</param>
+        /// <param name="x2">The second item.</param>
+        /// <returns>A <see cref="Tuple{T1, T2}"/> instance.</returns>
+        /// <remarks>
+        /// Alias for <see cref="tuple{T1, T2}(T1, T2)"/>.
+        /// </remarks>
+        public static Tuple<T1, T2> ToTuple<T1, T2>(T1 x1, T2 x2) => tuple(x1, x2);
+
+        /// <summary>
+        /// Creates tuple with item of Type <see cref="object"/> in the second position.
+        /// </summary>
+        /// <typeparam name="T">The type of the first item.</typeparam>
+        /// <param name="x1">The first item.</param>
+        /// <param name="x2">The second item.</param>
+        /// <returns>A <see cref="Tuple{T1,Object}"/> instance.</returns>
+        /// <remarks>
+        /// Alias for <see cref="tupleo{T}(T, object)"/>.
+        /// </remarks>
+        public static Tuple<T, object> ToTupleO<T>(T x1, object x2) => tupleo(x1, x2);
     }
 }
