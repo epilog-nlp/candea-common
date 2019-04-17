@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net47;net471;net472;netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netstandard2.0</TargetFrameworks>
+    <LangVersion>Latest</LangVersion>
+    <RootNamespace>Candea.Common</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <Authors>Ian Schlarman; Mihaela Iridon</Authors>
+    <Copyright>Copyright ©2019 Ian Schlarman</Copyright>
+    <Description>A collection of simple utilities, data types, and extensibility frameworks for dependency injection (MEF), data access, logging, caching, and serialization.</Description>
+    <PackageTags>Utility Candea Framework DI IoC MEF DataAccess Logging Caching Serialization</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/kaylerich/candea-common</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/kaylerich/candea-common.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Util\CoreUtil.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.5.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
