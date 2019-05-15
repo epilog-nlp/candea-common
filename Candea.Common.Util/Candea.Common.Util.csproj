@@ -18,7 +18,7 @@
   <PropertyGroup>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated Newtonsoft.Json references to latest version.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/kaylerich/candea-common</PackageProjectUrl>
     <RepositoryUrl>https://github.com/kaylerich/candea-common.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
