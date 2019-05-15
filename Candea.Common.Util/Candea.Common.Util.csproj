@@ -5,10 +5,10 @@
     <LangVersion>Latest</LangVersion>
     <RootNamespace>Candea.Common</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Ian Schlarman; Mihaela Iridon</Authors>
     <Copyright>Copyright ©2019 Ian Schlarman</Copyright>
-    <Description>A collection of simple utilities, data types, and extensibility frameworks for dependency injection (MEF), data access, logging, caching, and serialization.</Description>
+    <Description>A collection of simple utilities, data types, and extensibility frameworks for dependency injection (MEF), logging, caching, and serialization.</Description>
     <PackageTags>Utility Candea Framework DI IoC MEF DataAccess Logging Caching Serialization</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
     <PackageReference Include="System.ComponentModel.Composition" Version="4.5.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
